@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Word</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Guess the Word</h1>
+
+    <!-- Login -->
+    <div id="login-section">
+        <input id="login-username" type="text" placeholder="Username">
+        <input id="login-password" type="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <button onclick="showRegister()">Create Account</button>
+        <p id="login-message"></p>
+    </div>
+
+    <!-- Register -->
+    <div id="register-section" class="hidden">
+        <h2>Register and start playing!</h2>
+
+        <input id="register-username" type="text" placeholder="Username">
+        <input id="register-password" type="password" placeholder="Password">
+        <input id="confirm-password" type="password" placeholder="Confirm Password">
+
+        <button onclick="register()">Register</button>
+
+        <p id="register-message"></p>
+    </div>
+    <!-- Game -->
+    <div id="game-section" class="hidden">
+
+        <div class="game-header">
+            <div>
+                <p>Guess the hidden 5-letter word</p>
+            </div>
+
+            <button class="logout-button" onclick="logout()">Logout</button>
+        </div>
+
+        <button class="new-game-button" onclick="startGame()">
+            + New Game
+        </button>
+
+        <div id="guess-input">
+            <input
+                id="guess"
+                type="text"
+                maxlength="5"
+                placeholder="Enter your guess"
+            >
+
+            <button class="guess-button" onclick="submitGuess()">
+                Guess
+            </button>
+        </div>
+
+        <div id="guesses"></div>
+
+        <p id="game-message"></p>
+
+    </div>
+    <div id="admin-section" class="hidden">
+    <h2>Admin Reports</h2>
+
+    <button onclick="showDailyReport()">Daily Report</button>
+    <button onclick="showUserReport()">User Report</button>
+
+    <div id="admin-report"></div>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
